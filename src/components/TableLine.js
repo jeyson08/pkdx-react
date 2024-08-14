@@ -22,12 +22,33 @@ const TableLine = ({ pkm }) => {
 
   return (
     <div className="table-line">
-      <p>{pkmSoloData && customId(pkmSoloData.id)}</p>
-      <p>{pkmSoloData && pkmSoloData.name}</p>
+      <p className="pkm-id">{pkmSoloData.id && customId(pkmSoloData.id)}</p>
+      <p className="pkm-name">{pkmSoloData.name && pkmSoloData.name}</p>
       <img
         src={pkmSoloData.sprites && pkmSoloData.sprites.front_default}
-        alt={pkmSoloData.name}
+        alt={pkmSoloData.name && pkmSoloData.name}
       />
+      <img
+        src={pkmSoloData.sprites && pkmSoloData.sprites.front_shiny}
+        alt={pkmSoloData.name && pkmSoloData.name + " shiny"}
+      />
+      <ul className="pkm-types">
+        {pkmSoloData.types &&
+          pkmSoloData.types.map((type) => (
+            <li key={type.slot}>{type.type.name}</li>
+          ))}
+      </ul>
+      <figure>
+        <figcaption>Écouter le cri :</figcaption>
+        <audio
+          controls
+          src={pkmSoloData.cries && pkmSoloData.cries.legacy}
+        ></audio>
+        <a href={pkmSoloData.cries && pkmSoloData.cries.legacy}>
+          {" "}
+          Télécharger{" "}
+        </a>
+      </figure>
     </div>
   );
 };
