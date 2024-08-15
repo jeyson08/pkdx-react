@@ -1,0 +1,74 @@
+@font-face {
+  font-family: noto;
+  src: url("../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  font-family: noto;
+}
+
+body {
+  background: black;
+}
+
+li {
+  list-style: none;
+}
+
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card {
+  height: 501px;
+  width: 328px;
+  background: url("../assets/img/list_pokemon_bg.png") 50% 50% no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.card .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 16% 0 16% 0;
+}
+.card .img-container img {
+  width: 50%;
+  -webkit-filter: drop-shadow(0 0 0.2rem white);
+          filter: drop-shadow(0 0 0.2rem white);
+}
+.card .infos-container p.pkm-id {
+  color: #b4ebff;
+  font-size: 1.5rem;
+  padding: 5% 0 0 5%;
+}
+.card .infos-container p.pkm-name {
+  font-size: 2.5rem;
+  padding: 0 0 0 5%;
+  text-transform: capitalize;
+}/*# sourceMappingURL=index.css.map */

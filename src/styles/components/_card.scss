@@ -1,0 +1,32 @@
+.card {
+  height: 501px;
+  width: 328px;
+  background: url("../assets/img/list_pokemon_bg.png") 50% 50% no-repeat;
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+  //   justify-content: space-around;
+
+  .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16% 0 16% 0;
+    img {
+      width: 50%;
+      filter: drop-shadow(0 0 0.2rem white);
+    }
+  }
+  .infos-container {
+    p.pkm-id {
+      color: #b4ebff;
+      font-size: 1.5rem;
+      padding: 5% 0 0 5%;
+    }
+    p.pkm-name {
+      font-size: 2.5rem;
+      padding: 0 0 0 5%;
+      text-transform: capitalize;
+    }
+  }
+}
