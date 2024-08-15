@@ -39,7 +39,9 @@ const Card = ({ pkm }) => {
         <ul className="pkm-types">
           {pkmSoloData.types &&
             pkmSoloData.types.map((type) => (
-              <li key={type.slot}>{type.type.name}</li>
+              <li key={type.slot} className={type.type.name}>
+                {type.type.name}
+              </li>
             ))}
         </ul>
       </div>

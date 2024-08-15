@@ -12,11 +12,26 @@
 }
 
 body {
-  background: black;
+  background: rgb(29, 38, 58);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 li {
   list-style: none;
+}
+
+.app-container {
+  background: red;
+  max-width: 1400px;
+  background: black;
 }
 
 .card-container {
@@ -69,7 +84,7 @@ li {
   padding: 8% 0 0 8%;
 }
 .card .infos-container p.pkm-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 0 0 0 8%;
   text-transform: capitalize;
 }
@@ -85,4 +100,115 @@ li {
 .card .infos-container ul.pkm-types li {
   text-transform: capitalize;
   font-size: 1.2rem;
+  border-radius: 20px;
+  padding: 1% 10%;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+}
+.card .infos-container ul.pkm-types li.grass {
+  background: #92bf19;
+  border: 1px solid #b4f000;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #92bf19;
+          box-shadow: 0 0 0.25em 0.03em #92bf19;
+}
+.card .infos-container ul.pkm-types li.poison {
+  background: #be78be;
+  border: 1px solid #d28cd2;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #be78be;
+          box-shadow: 0 0 0.25em 0.03em #be78be;
+}
+.card .infos-container ul.pkm-types li.fire {
+  background: #ff3700;
+  border: 1px solid #ff3700;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #ff3700;
+          box-shadow: 0 0 0.25em 0.03em #ff3700;
+}
+.card .infos-container ul.pkm-types li.flying {
+  background: #79bcd7;
+  border: 1px solid #78dcff;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #79bcd7;
+          box-shadow: 0 0 0.25em 0.03em #79bcd7;
+}
+.card .infos-container ul.pkm-types li.water {
+  background: #0094e5;
+  border: 1px solid #14b9ff;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #0094e5;
+          box-shadow: 0 0 0.25em 0.03em #0094e5;
+}
+.card .infos-container ul.pkm-types li.dragon {
+  background: #3c64c8;
+  border: 1px solid #5078dc;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #3c64c8;
+          box-shadow: 0 0 0.25em 0.03em #3c64c8;
+}
+.card .infos-container ul.pkm-types li.bug {
+  background: #32b432;
+  border: 1px solid #46c846;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #32b432;
+          box-shadow: 0 0 0.25em 0.03em #32b432;
+}
+.card .infos-container ul.pkm-types li.normal {
+  background: #a0a0a0;
+  border: 1px solid #dcdcdc;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #a0a0a0;
+          box-shadow: 0 0 0.25em 0.03em #a0a0a0;
+}
+.card .infos-container ul.pkm-types li.dark {
+  background: #646464;
+  border: 1px solid #787878;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #646464;
+          box-shadow: 0 0 0.25em 0.03em #646464;
+}
+.card .infos-container ul.pkm-types li.electric {
+  background: #e4b700;
+  border: 1px solid #ffe100;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #e4b700;
+          box-shadow: 0 0 0.25em 0.03em #e4b700;
+}
+.card .infos-container ul.pkm-types li.ground {
+  background: #cca142;
+  border: 1px solid #fac85a;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #cca142;
+          box-shadow: 0 0 0.25em 0.03em #cca142;
+}
+.card .infos-container ul.pkm-types li.ice {
+  background: #00b7ee;
+  border: 1px solid #14f5ff;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #00b7ee;
+          box-shadow: 0 0 0.25em 0.03em #00b7ee;
+}
+.card .infos-container ul.pkm-types li.steel {
+  background: #96b4dc;
+  border: 1px solid #aac8f0;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #96b4dc;
+          box-shadow: 0 0 0.25em 0.03em #96b4dc;
+}
+.card .infos-container ul.pkm-types li.psychic {
+  background: #dc78c8;
+  border: 1px solid #f08cdc;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #dc78c8;
+          box-shadow: 0 0 0.25em 0.03em #dc78c8;
+}
+.card .infos-container ul.pkm-types li.fairy {
+  background: #ff7eb8;
+  border: 1px solid #ffafdc;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #ff7eb8;
+          box-shadow: 0 0 0.25em 0.03em #ff7eb8;
+}
+.card .infos-container ul.pkm-types li.fighting {
+  background: #c85500;
+  border: 1px solid #dc6900;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #c85500;
+          box-shadow: 0 0 0.25em 0.03em #c85500;
+}
+.card .infos-container ul.pkm-types li.rock {
+  background: #a07850;
+  border: 1px solid #b48c64;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #a07850;
+          box-shadow: 0 0 0.25em 0.03em #a07850;
+}
+.card .infos-container ul.pkm-types li.ghost {
+  background: #8c78f0;
+  border: 1px solid #a08cff;
+  -webkit-box-shadow: 0 0 0.25em 0.03em #8c78f0;
+          box-shadow: 0 0 0.25em 0.03em #8c78f0;
 }/*# sourceMappingURL=index.css.map */
