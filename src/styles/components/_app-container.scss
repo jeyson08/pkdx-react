@@ -2,4 +2,26 @@
   background: red;
   max-width: 1400px;
   background: black;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+  button {
+    width: 40%;
+    border: 2px solid #4e7cb0;
+    background: none;
+    margin: 5% 0 10% 0;
+    color: #b3eafe;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+    border-radius: 30px;
+    padding: 1% 2%;
+    cursor: pointer;
+
+    &:hover {
+      background: #b3eafe;
+      color: black;
+    }
+  }
 }

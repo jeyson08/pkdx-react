@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CardContainer from "./components/CardContainer";
+import Header from "./components/Header";
 
 function App() {
   const [pkmData, setPkmData] = useState([]);
@@ -14,8 +15,11 @@ function App() {
 
   return (
     <div className="app-container">
+      <Header />
       <CardContainer pkmData={pkmData} />
-      <button onClick={() => setLoadMore(loadMore + 16)}>coucou</button>
+      <button onClick={() => setLoadMore(loadMore + 16)}>
+        Load more Pokémon
+      </button>
     </div>
   );
 }

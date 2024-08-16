@@ -32,6 +32,57 @@ li {
   background: red;
   max-width: 1400px;
   background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.app-container button {
+  width: 40%;
+  border: 2px solid #4e7cb0;
+  background: none;
+  margin: 5% 0 10% 0;
+  color: #b3eafe;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+  border-radius: 30px;
+  padding: 1% 2%;
+  cursor: pointer;
+}
+.app-container button:hover {
+  background: #b3eafe;
+  color: black;
+}
+
+.header-container {
+  width: 100%;
+}
+.header-container header {
+  height: 130px;
+  background: url("../assets/img/header_bg.png") center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header-container header h1 {
+  color: black;
+  font-weight: 400;
 }
 
 .card-container {

@@ -1,0 +1,15 @@
+.header-container {
+  width: 100%;
+  header {
+    height: 130px;
+    background: url("../assets/img/header_bg.png") center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: black;
+      font-weight: 400;
+    }
+  }
+}
