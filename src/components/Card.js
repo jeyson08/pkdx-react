@@ -29,6 +29,8 @@ const Card = ({ pkm }) => {
           src={
             pkmSoloData.sprites &&
             pkmSoloData.sprites.other["official-artwork"].front_default
+              ? pkmSoloData.sprites.other["official-artwork"].front_default
+              : "/img/masterball.png"
           }
           alt={pkmSoloData.name && pkmSoloData.name}
         />

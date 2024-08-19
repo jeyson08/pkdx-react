@@ -23,9 +23,6 @@ const CardContainer = ({ pkmData, searchClik }) => {
       setDisplayedPkmData(pkmData);
     }
   }, [searchClik, pkmData]);
-
-  // Mélanger les Pokémon si searchClik est true
-  // const displayedPkmData = searchClik ? shuffleArray(pkmData) : pkmData;
   return (
     <div className="card-container">
       {displayedPkmData &&
