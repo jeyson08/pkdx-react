@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/?limit=1302`)
+      .get(`https://pokeapi.co/api/v2/pokemon/?limit=1025`)
       .then((res) => setPkmData(res.data.results));
   }, []);
 
