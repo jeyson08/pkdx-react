@@ -50,7 +50,6 @@ li {
   }
 }
 .app-container {
-  background: red;
   max-width: 1400px;
   background: black;
   display: -webkit-box;
@@ -63,22 +62,6 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.app-container button {
-  width: 40%;
-  border: 2px solid #4e7cb0;
-  background: none;
-  margin: 5% 0 10% 0;
-  color: #b3eafe;
-  font-size: 1.5rem;
-  text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
-  border-radius: 30px;
-  padding: 1% 2%;
-  cursor: pointer;
-}
-.app-container button:hover {
-  background: #b3eafe;
-  color: black;
 }
 
 .header-container {
@@ -208,6 +191,47 @@ li {
   right: 5%;
 }
 
+.search-engine {
+  z-index: 10;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 450px;
+  margin-top: 60px;
+}
+.search-engine .search-options {
+  border: 2px solid #4e7cb0;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 10px #b3eafe;
+          box-shadow: 0px 0px 10px #b3eafe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 30%;
+}
+.search-engine .search-options .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.search-engine .search-options .search input {
+  color: black;
+}
+
 .card-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,6 +244,22 @@ li {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+.card-container button.load {
+  width: 40%;
+  border: 2px solid #4e7cb0;
+  background: none;
+  margin: 5% 0 10% 0;
+  color: #b3eafe;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+  border-radius: 30px;
+  padding: 1% 2%;
+  cursor: pointer;
+}
+.card-container button.load:hover {
+  background: #b3eafe;
+  color: black;
 }
 
 .card {
