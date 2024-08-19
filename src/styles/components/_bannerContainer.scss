@@ -1,0 +1,87 @@
+.banner-container {
+  height: 400px;
+  position: relative;
+  div {
+    border: 2px solid #4973a2;
+    border-radius: 300px;
+    background: #000;
+    img {
+      height: 110px;
+      width: 110px;
+      filter: drop-shadow(0 0 0.1rem white);
+    }
+    &:first-of-type {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+    }
+    &:nth-of-type(2) {
+      position: absolute;
+      top: 20%;
+      left: 15%;
+    }
+    &:nth-of-type(3) {
+      position: absolute;
+      top: 61%;
+      left: 15%;
+    }
+    &:nth-of-type(4) {
+      position: absolute;
+      top: 40%;
+      left: 22.5%;
+    }
+    &:nth-of-type(5) {
+      position: absolute;
+      top: 20%;
+      left: 30%;
+    }
+    &:nth-of-type(6) {
+      position: absolute;
+      top: 61%;
+      left: 30%;
+    }
+    &:nth-of-type(7) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20%;
+      border: 2px solid #85d7fd;
+      box-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
+      background: url("../assets/img/pokemon_circle_bg.png") center/cover;
+      img {
+        height: 300px;
+        width: 300px;
+      }
+    }
+    &:nth-of-type(8) {
+      position: absolute;
+      top: 61%;
+      right: 30%;
+    }
+    &:nth-of-type(9) {
+      position: absolute;
+      top: 20%;
+      right: 30%;
+    }
+    &:nth-of-type(10) {
+      position: absolute;
+      top: 40%;
+      right: 22.5%;
+    }
+    &:nth-of-type(11) {
+      position: absolute;
+      top: 20%;
+      right: 15%;
+    }
+    &:nth-of-type(12) {
+      position: absolute;
+      top: 61%;
+      right: 15%;
+    }
+    &:last-of-type {
+      position: absolute;
+      top: 40%;
+      right: 5%;
+    }
+  }
+}
