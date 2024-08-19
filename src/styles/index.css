@@ -103,9 +103,8 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -115,6 +114,7 @@ li {
 .header-container header h1 {
   color: black;
   font-weight: 400;
+  margin-top: 30px;
 }
 
 .banner-container {
@@ -124,13 +124,13 @@ li {
 .banner-container div {
   border: 2px solid #4973a2;
   border-radius: 300px;
-  background: #000;
+  background: rgb(29, 38, 58);
 }
 .banner-container div img {
   height: 110px;
   width: 110px;
-  -webkit-filter: drop-shadow(0 0 0.1rem white);
-          filter: drop-shadow(0 0 0.1rem white);
+  -webkit-filter: drop-shadow(0 0 0.1rem black);
+          filter: drop-shadow(0 0 0.1rem black);
 }
 .banner-container div:first-of-type {
   position: absolute;
@@ -250,8 +250,8 @@ li {
 }
 .card .img-container img {
   width: 50%;
-  -webkit-filter: drop-shadow(0 0 0.2rem white);
-          filter: drop-shadow(0 0 0.2rem white);
+  -webkit-filter: drop-shadow(0 0 0.2rem black);
+          filter: drop-shadow(0 0 0.2rem black);
 }
 .card .infos-container p.pkm-id {
   color: #b4ebff;

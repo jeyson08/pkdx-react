@@ -4,8 +4,6 @@
   background: url("../assets/img/list_pokemon_bg.png") 50% 50% no-repeat;
   display: flex;
   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: space-around;
   margin-bottom: 1%;
   z-index: 10;
 
@@ -16,7 +14,7 @@
     padding: 16% 0 16% 0;
     img {
       width: 50%;
-      filter: drop-shadow(0 0 0.2rem white);
+      filter: drop-shadow(0 0 0.2rem black);
     }
   }
   .infos-container {

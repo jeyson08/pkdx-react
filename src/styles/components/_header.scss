@@ -13,13 +13,14 @@
     background: url("../assets/img/header_bg.png") center/cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     position: relative;
     z-index: 10;
     h1 {
       color: black;
       font-weight: 400;
+      margin-top: 30px;
     }
   }
 }
