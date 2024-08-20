@@ -37,10 +37,12 @@ const CardContainer = ({ pkmData, searchClik, search, inputValue }) => {
 
   return (
     <div className="card-container">
-      {displayedPkmData &&
-        displayedPkmData
-          .map((pkm, index) => <Card pkm={pkm} key={index} />)
-          .slice(0, loadMore)}
+      <div className="card-div">
+        {displayedPkmData &&
+          displayedPkmData
+            .map((pkm, index) => <Card pkm={pkm} key={index} />)
+            .slice(0, loadMore)}
+      </div>
       <button className="load" onClick={() => setLoadMore(loadMore + 16)}>
         Load more Pokémon
       </button>
