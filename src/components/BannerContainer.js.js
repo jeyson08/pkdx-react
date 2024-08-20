@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const BannerContainer = () => {
   const [randomPkm, setRandomPkm] = useState([]);
@@ -34,11 +35,13 @@ const BannerContainer = () => {
     <div className="banner-container">
       {randomPkm.map((pokemon, index) => (
         <div key={index}>
-          <img
-            src={pokemon.sprites.other["official-artwork"].front_default}
-            alt={pokemon.name}
-            title={pokemon.name}
-          />
+          <NavLink to="/pokemon">
+            <img
+              src={pokemon.sprites.other["official-artwork"].front_default}
+              alt={pokemon.name}
+              title={pokemon.name}
+            />
+          </NavLink>
         </div>
       ))}
     </div>

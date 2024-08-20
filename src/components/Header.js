@@ -1,5 +1,4 @@
 import React from "react";
-import BannerContainer from "./BannerContainer.js";
 
 const Header = () => {
   return (
@@ -15,7 +14,6 @@ const Header = () => {
           .
         </p>
       </header>
-      <BannerContainer />
     </div>
   );
 };

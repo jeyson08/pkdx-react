@@ -1,17 +1,20 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const SearchEngine = ({
   searchClik,
   setSearchClik,
   search,
   setSearch,
-  inputValue,
   setInputValue,
 }) => {
   useEffect(() => {
-    console.log(searchClik);
-  }, [searchClik]);
+    if (search === false) {
+      const searchInput = document.querySelector("#search"); // Sélectionner l'élément input avec l'ID search
+      if (searchInput) {
+        searchInput.value = ""; // Réinitialiser la valeur de l'input
+      }
+    }
+  }, [search]);
 
   return (
     <div className="search-engine">

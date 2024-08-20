@@ -104,6 +104,7 @@ li {
 .banner-container {
   height: 400px;
   position: relative;
+  width: 100%;
 }
 .banner-container div {
   border: 2px solid #4973a2;

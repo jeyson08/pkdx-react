@@ -24,7 +24,7 @@ const CardContainer = ({ pkmData, searchClik, search, inputValue }) => {
       updatedPkmData = pkmData.filter(
         (pkm) =>
           pkm.name.toLowerCase().includes(inputValue.toLowerCase()) ||
-          pkm.id === searchById
+          (!isNaN(searchById) && pkm.id === searchById)
       );
     }
 
