@@ -37,10 +37,6 @@ const Card = ({ pkm }) => {
 
   return (
     <div className="card">
-      <p>
-        {pkmSpeciesData.flavor_text_entries &&
-          pkmSpeciesData.flavor_text_entries[1].flavor_text}
-      </p>
       <div className="img-container">
         <img
           src={

@@ -7,6 +7,8 @@ import SearchEngine from "./components/SearchEngine";
 function App() {
   const [pkmData, setPkmData] = useState([]);
   const [searchClik, setSearchClik] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     axios
@@ -17,8 +19,20 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <SearchEngine searchClik={searchClik} setSearchClik={setSearchClik} />
-      <CardContainer pkmData={pkmData} searchClik={searchClik} />
+      <SearchEngine
+        searchClik={searchClik}
+        setSearchClik={setSearchClik}
+        search={search}
+        setSearch={setSearch}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+      />
+      <CardContainer
+        pkmData={pkmData}
+        searchClik={searchClik}
+        search={search}
+        inputValue={inputValue}
+      />
     </div>
   );
 }

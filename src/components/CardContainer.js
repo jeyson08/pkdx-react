@@ -11,18 +11,30 @@ function shuffleArray(array) {
   return shuffledArray;
 }
 
-const CardContainer = ({ pkmData, searchClik }) => {
+const CardContainer = ({ pkmData, searchClik, search, inputValue }) => {
   const [loadMore, setLoadMore] = useState(16);
   const [displayedPkmData, setDisplayedPkmData] = useState([]);
 
   // Mélanger les Pokémon une seule fois lorsque searchClik devient true
   useEffect(() => {
-    if (searchClik) {
-      setDisplayedPkmData(shuffleArray(pkmData));
-    } else {
-      setDisplayedPkmData(pkmData);
+    let updatedPkmData = [...pkmData];
+
+    if (search) {
+      const searchById = parseInt(inputValue);
+      updatedPkmData = pkmData.filter(
+        (pkm) =>
+          pkm.name.toLowerCase().includes(inputValue.toLowerCase()) ||
+          pkm.id === searchById
+      );
     }
-  }, [searchClik, pkmData]);
+
+    if (searchClik && !search) {
+      updatedPkmData = shuffleArray(updatedPkmData);
+    }
+
+    setDisplayedPkmData(updatedPkmData);
+  }, [searchClik, pkmData, search, inputValue]);
+
   return (
     <div className="card-container">
       {displayedPkmData &&

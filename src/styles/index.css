@@ -50,6 +50,7 @@ li {
   }
 }
 .app-container {
+  min-width: 1400px;
   max-width: 1400px;
   background: black;
   display: -webkit-box;

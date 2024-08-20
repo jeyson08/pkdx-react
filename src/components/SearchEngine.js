@@ -1,18 +1,35 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-const SearchEngine = ({ searchClik, setSearchClik }) => {
+const SearchEngine = ({
+  searchClik,
+  setSearchClik,
+  search,
+  setSearch,
+  inputValue,
+  setInputValue,
+}) => {
   useEffect(() => {
     console.log(searchClik);
   }, [searchClik]);
+
   return (
     <div className="search-engine">
       <div className="search-options">
         <div className="search">
+          <button
+            onClick={() =>
+              search === false ? setSearch(true) : setSearch(false)
+            }
+          >
+            {search === true ? "Cancel" : "Search"}
+          </button>
           <input
             type="text"
             name="search"
             id="search"
             placeholder="ex: Charizard, 6, Pikachu, ..."
+            onChange={(e) => setInputValue(e.target.value)}
           />
           <label htmlFor="search">Search by name or number</label>
         </div>
