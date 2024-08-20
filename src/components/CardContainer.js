@@ -43,9 +43,11 @@ const CardContainer = ({ pkmData, searchClik, search, inputValue }) => {
             .map((pkm, index) => <Card pkm={pkm} key={index} />)
             .slice(0, loadMore)}
       </div>
-      <button className="load" onClick={() => setLoadMore(loadMore + 16)}>
-        Load more Pokémon
-      </button>
+      {displayedPkmData.length > loadMore && displayedPkmData.length > 16 && (
+        <button className="load" onClick={() => setLoadMore(loadMore + 16)}>
+          Load more Pokémon
+        </button>
+      )}
     </div>
   );
 };
