@@ -22,6 +22,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);

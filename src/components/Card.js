@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import customId from "./Utils";
 
 const Card = ({ pkm }) => {
   const [pkmSoloData, setPkmSoloData] = useState({});
@@ -24,21 +25,12 @@ const Card = ({ pkm }) => {
     }
   }, [pkmId]);
 
-  const customId = (id) => {
-    if (id < 10) {
-      return "000" + id;
-    } else if (id >= 10 && id < 100) {
-      return "00" + id;
-    } else if (id >= 100 && id < 1000) {
-      return "0" + id;
-    } else {
-      return id;
-    }
-  };
-
   return (
     <div className="card">
-      <NavLink to="/pokemon">
+      <NavLink
+        to={`/pokemon/${pkmSoloData.name}`}
+        state={{ pokemonData: pkmSoloData }}
+      >
         <div className="img-container">
           <img
             src={

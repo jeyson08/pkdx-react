@@ -28,6 +28,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -69,14 +73,6 @@ li {
   width: 100%;
   position: relative;
 }
-.header-container .animation {
-  position: absolute;
-  height: 700px;
-  width: 100%;
-  background: url("../assets/img/pokemon_list_bg.png");
-  -webkit-animation: rotate 5s infinite linear;
-          animation: rotate 5s infinite linear;
-}
 .header-container header {
   height: 130px;
   background: url("../assets/img/header_bg.png") center/cover;
@@ -100,54 +96,71 @@ li {
   font-weight: 400;
   margin-top: 30px;
 }
+.header-container header p a {
+  text-decoration: underline;
+}
 
 .banner-container {
   height: 400px;
   position: relative;
   width: 100%;
 }
-.banner-container div {
+.banner-container .animation {
+  position: absolute;
+  height: 700px;
+  width: 100%;
+  background: url("../assets/img/pokemon_list_bg.png");
+  -webkit-animation: rotate 5s infinite linear;
+          animation: rotate 5s infinite linear;
+  top: -110px;
+}
+.banner-container .circle-container {
+  height: 400px;
+  position: relative;
+  width: 100%;
+}
+.banner-container .circle-container div.pkm-circle {
   border: 2px solid #4973a2;
   border-radius: 300px;
   background: rgb(29, 38, 58);
 }
-.banner-container div img {
+.banner-container .circle-container div.pkm-circle img {
   height: 110px;
   width: 110px;
   -webkit-filter: drop-shadow(0 0 0.1rem black);
           filter: drop-shadow(0 0 0.1rem black);
 }
-.banner-container div:first-of-type {
+.banner-container .circle-container div.pkm-circle:first-of-type {
   position: absolute;
   top: 40%;
   left: 5%;
 }
-.banner-container div:nth-of-type(2) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(2) {
   position: absolute;
   top: 20%;
   left: 15%;
 }
-.banner-container div:nth-of-type(3) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(3) {
   position: absolute;
   top: 61%;
   left: 15%;
 }
-.banner-container div:nth-of-type(4) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(4) {
   position: absolute;
   top: 40%;
   left: 22.5%;
 }
-.banner-container div:nth-of-type(5) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(5) {
   position: absolute;
   top: 20%;
   left: 30%;
 }
-.banner-container div:nth-of-type(6) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(6) {
   position: absolute;
   top: 61%;
   left: 30%;
 }
-.banner-container div:nth-of-type(7) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(7) {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -158,36 +171,36 @@ li {
           box-shadow: 0 0 5px #b3eafe, 0 0 5px #b3eafe;
   background: url("../assets/img/pokemon_circle_bg.png") center/cover;
 }
-.banner-container div:nth-of-type(7) img {
+.banner-container .circle-container div.pkm-circle:nth-of-type(7) img {
   height: 300px;
   width: 300px;
 }
-.banner-container div:nth-of-type(8) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(8) {
   position: absolute;
   top: 61%;
   right: 30%;
 }
-.banner-container div:nth-of-type(9) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(9) {
   position: absolute;
   top: 20%;
   right: 30%;
 }
-.banner-container div:nth-of-type(10) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(10) {
   position: absolute;
   top: 40%;
   right: 22.5%;
 }
-.banner-container div:nth-of-type(11) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(11) {
   position: absolute;
   top: 20%;
   right: 15%;
 }
-.banner-container div:nth-of-type(12) {
+.banner-container .circle-container div.pkm-circle:nth-of-type(12) {
   position: absolute;
   top: 61%;
   right: 15%;
 }
-.banner-container div:last-of-type {
+.banner-container .circle-container div.pkm-circle:last-of-type {
   position: absolute;
   top: 40%;
   right: 5%;

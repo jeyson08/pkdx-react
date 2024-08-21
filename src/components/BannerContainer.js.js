@@ -33,17 +33,23 @@ const BannerContainer = () => {
 
   return (
     <div className="banner-container">
-      {randomPkm.map((pokemon, index) => (
-        <div key={index}>
-          <NavLink to="/pokemon">
-            <img
-              src={pokemon.sprites.other["official-artwork"].front_default}
-              alt={pokemon.name}
-              title={pokemon.name}
-            />
-          </NavLink>
-        </div>
-      ))}
+      <div className="animation"></div>
+      <div className="circle-container">
+        {randomPkm.map((pokemon, index) => (
+          <div key={index} className="pkm-circle">
+            <NavLink
+              to={`/pokemon/${pokemon.name}`}
+              state={{ pokemonData: pokemon }}
+            >
+              <img
+                src={pokemon.sprites.other["official-artwork"].front_default}
+                alt={pokemon.name}
+                title={pokemon.name}
+              />
+            </NavLink>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
