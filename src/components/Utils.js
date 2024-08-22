@@ -1,4 +1,4 @@
-const customId = (id) => {
+export const customId = (id) => {
   if (id < 10) {
     return "000" + id;
   } else if (id >= 10 && id < 100) {
@@ -10,4 +10,12 @@ const customId = (id) => {
   }
 };
 
-export default customId;
+export const getEnglishFlavorText = (flavorTextEntries) => {
+  // Filtrer pour obtenir la première entrée avec la langue anglaise
+  const englishEntry = flavorTextEntries.find(
+    (entry) => entry.language.name === "en"
+  );
+  return englishEntry
+    ? englishEntry.flavor_text
+    : "No English flavor text available.";
+};

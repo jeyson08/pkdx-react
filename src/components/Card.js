@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import customId from "./Utils";
+import { customId } from "./Utils";
 
 const Card = ({ pkm }) => {
   const [pkmSoloData, setPkmSoloData] = useState({});
