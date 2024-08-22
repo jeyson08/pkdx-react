@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import EvolutionCard from "./EvolutionCard";
 
 const Evolution = ({ url }) => {
   const [evolutionData, setEvolutionData] = useState({});
@@ -12,22 +13,25 @@ const Evolution = ({ url }) => {
     <div className="evolution-container">
       {evolutionData.chain && (
         <div className="evolutions">
-          <div className="evolution">
-            {evolutionData.chain.species.name &&
-              evolutionData.chain.species.name}
-          </div>
+          <EvolutionCard
+            url={
+              evolutionData.chain.species.url && evolutionData.chain.species.url
+            }
+          />
           {evolutionData.chain.evolves_to &&
             evolutionData.chain.evolves_to.map((evolution) => (
-              <div className="evolution" key={evolution.species.name}>
-                {evolution.species.name}
-              </div>
+              <EvolutionCard
+                key={evolution.species.name}
+                url={evolution.species.url}
+              />
             ))}
           {evolutionData.chain.evolves_to &&
             evolutionData.chain.evolves_to.map((evolution) =>
               evolution.evolves_to.map((evolution) => (
-                <div className="evolution" key={evolution.species.name}>
-                  {evolution.species.name}
-                </div>
+                <EvolutionCard
+                  key={evolution.species.name}
+                  url={evolution.species.url}
+                />
               ))
             )}
         </div>

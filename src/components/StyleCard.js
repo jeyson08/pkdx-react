@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { customId } from "./Utils";
 
-const StyleCard = ({ varieties, pkmSpeciesData }) => {
+const StyleCard = ({ varieties }) => {
   const [styleData, setStyleData] = useState({});
 
   useEffect(() => {
