@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { customId, getEnglishFlavorText } from "../components/Utils";
+import StyleCard from "../components/StyleCard";
+import Evolution from "../components/Evolution";
 
 const Pokemon = () => {
   const { name } = useParams();
@@ -93,11 +95,23 @@ const Pokemon = () => {
           <p>{flavorText}</p>
         </div>
         <div className="stats">
-          {pkmData.stats.map((stat) => (
-            <p key={stat.stat.name}>{stat.stat.name + ": " + stat.base_stat}</p>
-          ))}
+          {pkmData.stats &&
+            pkmData.stats.map((stat) => (
+              <p key={stat.stat.name}>
+                {stat.stat.name + ": " + stat.base_stat}
+              </p>
+            ))}
         </div>
       </div>
+      <div className="style">
+        {pkmSpeciesData.varieties &&
+          pkmSpeciesData.varieties.map((style) => (
+            <StyleCard key={style.pokemon.name} varieties={style} />
+          ))}
+      </div>
+      {pkmSpeciesData.evolution_chain && (
+        <Evolution url={pkmSpeciesData.evolution_chain.url} />
+      )}
     </div>
   );
 };
