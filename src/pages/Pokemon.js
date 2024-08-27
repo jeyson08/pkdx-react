@@ -36,6 +36,7 @@ const Pokemon = () => {
 
   return (
     <div className="pokemon">
+      <div className="overlay"></div>
       <Header />
       {pokemonData && (
         <div className="pokemon-container">
@@ -86,11 +87,11 @@ const Pokemon = () => {
               <div className="infos">
                 <div className="height">
                   <h4>Height</h4>
-                  <p>{pokemonData.height && pokemonData.height}</p>
+                  <p>{pokemonData.height && pokemonData.height} m</p>
                 </div>
                 <div className="weight">
                   <h4>Weight</h4>
-                  <p>{pokemonData.weight && pokemonData.weight}</p>
+                  <p>{pokemonData.weight && pokemonData.weight} kg</p>
                 </div>
                 <div className="ability">
                   <h4>Ability</h4>
@@ -109,7 +110,9 @@ const Pokemon = () => {
                     {pkmSpeciesData.genera && pkmSpeciesData.genera[7].genus}
                   </p>
                 </div>
-                <div className="gender"></div>
+                <div className="gender">
+                  <h4>Gender</h4>
+                </div>
               </div>
             </div>
           </div>

@@ -5,10 +5,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
 
   .pokemon-container {
     padding-top: 30px;
     width: 100%;
+    z-index: 2;
     .pokemon-header {
       display: flex;
       align-items: center;
@@ -124,6 +135,45 @@
       .right {
         width: 25%;
         height: 100%;
+
+        .infos {
+          margin: 30% 0 0 0;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-areas:
+            "h c c"
+            "w g g"
+            "a a a";
+
+          gap: 10%;
+
+          .height {
+            grid-area: h;
+          }
+          .weight {
+            grid-area: w;
+          }
+          .ability {
+            grid-area: a;
+          }
+          .category {
+            grid-area: c;
+          }
+          .gender {
+            grid-area: g;
+          }
+
+          h4 {
+            font-size: 1.4rem;
+            color: #b3eafe;
+            font-weight: 400;
+          }
+          p {
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
+        }
       }
     }
   }
