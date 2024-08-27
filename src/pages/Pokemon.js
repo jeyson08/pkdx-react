@@ -93,11 +93,11 @@ const Pokemon = () => {
               <div className="infos">
                 <div className="height">
                   <h4>Height</h4>
-                  <p>{pokemonData.height && pokemonData.height} m</p>
+                  <p>{pokemonData.height && pokemonData.height / 10} m</p>
                 </div>
                 <div className="weight">
                   <h4>Weight</h4>
-                  <p>{pokemonData.weight && pokemonData.weight} kg</p>
+                  <p>{pokemonData.weight && pokemonData.weight / 10} kg</p>
                 </div>
                 <div className="ability">
                   <h4>Ability</h4>
