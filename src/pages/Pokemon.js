@@ -1,117 +1,127 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
-import { customId, getEnglishFlavorText } from "../components/Utils";
-import StyleCard from "../components/StyleCard";
-import Evolution from "../components/Evolution";
+import { customId } from "../components/Utils";
 
 const Pokemon = () => {
   const { name } = useParams();
+  const location = useLocation();
+  const [pokemonData, setPokemonData] = useState(
+    location.state?.pokemonData || null
+  );
   const [pkmSpeciesData, setPkmSpeciesData] = useState({});
-  const [pkmData, setPkmData] = useState({});
 
   useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon-species/${name}`)
-      .then((res) => {
-        setPkmSpeciesData(res.data);
-      });
-  }, [name]);
-
-  const flavorText = pkmSpeciesData.flavor_text_entries
-    ? getEnglishFlavorText(pkmSpeciesData.flavor_text_entries)
-    : "No description available.";
+    if (!pokemonData) {
+      axios
+        .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        .then((res) => setPokemonData(res.data))
+        .catch((error) =>
+          console.error(
+            "Erreur lors de la récupération des données pokemon:",
+            error
+          )
+        );
+    }
+  }, [name, pokemonData]);
 
   useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${name}/`)
-      .then((res) => setPkmData(res.data));
-  }, [name]);
+    if (pokemonData.species && pokemonData.species.url) {
+      axios
+        .get(pokemonData.species.url)
+        .then((res) => setPkmSpeciesData(res.data));
+    }
+  }, [pokemonData]);
 
   return (
-    <div className="main">
+    <div className="pokemon">
       <Header />
-      <div className="pokemon-container">
-        {pkmSpeciesData && pkmData && (
-          <div className="pkm-infos">
-            <div className="pkm-header">
-              <h2>{pkmSpeciesData.name}</h2>
-              <p>{customId(pkmSpeciesData.id)}</p>
+      {pokemonData && (
+        <div className="pokemon-container">
+          <div className="pokemon-header">
+            <div className="previous">Previous</div>
+            <div className="infos">
+              <p>
+                {pokemonData.is_default
+                  ? customId(pokemonData.id)
+                  : customId(pkmSpeciesData.id)}
+              </p>
+              <h2>{pokemonData.name}</h2>
             </div>
-            <div className="pkm-banner">
-              <div className="left-banner">
-                <div className="type">
-                  <h3>Type</h3>
-                  <ul className="pkm-types">
-                    {pkmData.types &&
-                      pkmData.types.map((type) => (
-                        <li key={type.slot} className={type.type.name}>
-                          {type.type.name}
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-                <div className="weakness">
-                  <h3>Weakness</h3>
-                </div>
+            <div className="next">Next</div>
+          </div>
+          <div className="principal">
+            <div className="left">
+              <div className="types-container">
+                <h4>Type</h4>
+                <ul className="types">
+                  {pokemonData.types &&
+                    pokemonData.types.map((type) => (
+                      <li key={type.type.name} className={type.type.name}>
+                        {type.type.name}
+                      </li>
+                    ))}
+                </ul>
               </div>
-              <div className="center-banner">
-                <img
-                  src={
-                    pkmData.sprites &&
-                    pkmData.sprites.other["official-artwork"].front_default
-                  }
-                  alt={pkmData.name}
-                />
+              <div className="weaknesses-container">
+                <h4>Weakness</h4>
               </div>
-              <div className="right-banner">
+            </div>
+            <div className="middle">
+              <div className="animation"></div>
+              <div className="img-container">
+                {pokemonData.sprites && (
+                  <img
+                    src={
+                      pokemonData.sprites.other["official-artwork"]
+                        .front_default
+                    }
+                    alt={pokemonData.name}
+                  />
+                )}
+              </div>
+            </div>
+            <div className="right">
+              <div className="infos">
                 <div className="height">
                   <h4>Height</h4>
-                  <p>{pkmData.height}</p>
+                  <p>{pokemonData.height && pokemonData.height}</p>
                 </div>
                 <div className="weight">
                   <h4>Weight</h4>
-                  <p>{pkmData.weight}</p>
+                  <p>{pokemonData.weight && pokemonData.weight}</p>
                 </div>
-                <div className="abilities">
-                  <h4>abilities</h4>
-                  <ul>
-                    {pkmData.abilities &&
-                      pkmData.abilities.map((ability) => (
+                <div className="ability">
+                  <h4>Ability</h4>
+                  <ul className="abilities">
+                    {pokemonData.abilities &&
+                      pokemonData.abilities.map((ability) => (
                         <li key={ability.ability.name}>
                           {ability.ability.name}
                         </li>
                       ))}
                   </ul>
                 </div>
+                <div className="category">
+                  <h4>Category</h4>
+                  <p>
+                    {pkmSpeciesData.genera && pkmSpeciesData.genera[7].genus}
+                  </p>
+                </div>
+                <div className="gender"></div>
               </div>
             </div>
           </div>
-        )}
-      </div>
-      <div className="infos">
-        <div className="description">
-          <p>{flavorText}</p>
+          <div className="infos">
+            <div className="left"></div>
+            <div className="right"></div>
+          </div>
+          <div className="style"></div>
+          <div className="evolution"></div>
         </div>
-        <div className="stats">
-          {pkmData.stats &&
-            pkmData.stats.map((stat) => (
-              <p key={stat.stat.name}>
-                {stat.stat.name + ": " + stat.base_stat}
-              </p>
-            ))}
-        </div>
-      </div>
-      <div className="style">
-        {pkmSpeciesData.varieties &&
-          pkmSpeciesData.varieties.map((style) => (
-            <StyleCard key={style.pokemon.name} varieties={style} />
-          ))}
-      </div>
-      {pkmSpeciesData.evolution_chain && (
-        <Evolution url={pkmSpeciesData.evolution_chain.url} />
       )}
+      <button>Back to Pokédex</button>
     </div>
   );
 };

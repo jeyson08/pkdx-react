@@ -6,24 +6,22 @@ import { customId } from "./Utils";
 const Card = ({ pkm }) => {
   const [pkmSoloData, setPkmSoloData] = useState({});
   const [pkmSpeciesData, setPkmSpeciesData] = useState({});
-  const [pkmId, setPkmId] = useState(null);
 
   useEffect(() => {
     if (pkm) {
       axios.get(pkm.url).then((res) => {
         setPkmSoloData(res.data);
-        res.data.id && setPkmId(res.data.id);
       });
     }
   }, [pkm]);
 
   useEffect(() => {
-    if (pkmId !== null && pkmId < 10000) {
+    if (pkmSoloData.species && pkmSoloData.species.url) {
       axios
-        .get(`https://pokeapi.co/api/v2/pokemon-species/${pkmId}`)
+        .get(pkmSoloData.species.url)
         .then((res) => setPkmSpeciesData(res.data));
     }
-  }, [pkmId]);
+  }, [pkmSoloData]);
 
   return (
     <div className="card">
@@ -43,7 +41,11 @@ const Card = ({ pkm }) => {
           />
         </div>
         <div className="infos-container">
-          <p className="pkm-id">{pkmSoloData.id && customId(pkmSoloData.id)}</p>
+          <p className="pkm-id">
+            {pkmSoloData.is_default
+              ? pkmSoloData.id && customId(pkmSoloData.id)
+              : pkmSpeciesData.id && customId(pkmSpeciesData.id)}
+          </p>
           <p className="pkm-name">{pkmSoloData.name && pkmSoloData.name}</p>
           <ul className="pkm-types">
             {pkmSoloData.types &&

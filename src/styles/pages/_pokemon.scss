@@ -1,0 +1,74 @@
+.pokemon {
+  min-width: 1400px;
+  max-width: 1400px;
+  background: url("../assets/img/space.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .pokemon-container {
+    padding-top: 30px;
+    width: 100%;
+    .pokemon-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .previous {
+      }
+      .infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          color: #b4ebff;
+          font-size: 3rem;
+          margin-bottom: -20px;
+          z-index: 10;
+        }
+        h2 {
+          font-size: 4rem;
+          text-shadow: 0 0 3px #000, 2px 2px 7px #9be1ff, -2px -2px 7px #9be1ff;
+          font-weight: 400;
+          z-index: 10;
+        }
+      }
+      .next {
+      }
+    }
+    .principal {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 700px;
+      padding-top: 70px;
+      .left {
+      }
+      .middle {
+        position: relative;
+        width: 34%;
+        height: 100%;
+        .animation {
+          background: url("../assets/img/pokemon_bg.png") center/cover;
+          height: 720px;
+          position: absolute;
+          width: 720px;
+          top: -120px;
+          left: -120px;
+          animation: rotate 5s infinite linear;
+        }
+        .img-container {
+          background: url("../assets/img/pokemon_circle_bg.png") center/cover;
+          position: relative;
+          z-index: 10;
+          width: 100%;
+          height: auto;
+          img {
+            filter: drop-shadow(0 0 0.5rem white);
+          }
+        }
+      }
+    }
+  }
+}
