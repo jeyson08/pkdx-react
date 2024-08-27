@@ -20,6 +20,96 @@ body {
 
 li {
   list-style: none;
+  &.grass {
+    background: #92bf19;
+    border: 1px solid #b4f000;
+    box-shadow: 0 0 0.25em 0.03em #92bf19;
+  }
+  &.poison {
+    background: #be78be;
+    border: 1px solid #d28cd2;
+    box-shadow: 0 0 0.25em 0.03em #be78be;
+  }
+  &.fire {
+    background: #ff3700;
+    border: 1px solid #ff3700;
+    box-shadow: 0 0 0.25em 0.03em #ff3700;
+  }
+  &.flying {
+    background: #79bcd7;
+    border: 1px solid #78dcff;
+    box-shadow: 0 0 0.25em 0.03em #79bcd7;
+  }
+  &.water {
+    background: #0094e5;
+    border: 1px solid #14b9ff;
+    box-shadow: 0 0 0.25em 0.03em #0094e5;
+  }
+  &.dragon {
+    background: #3c64c8;
+    border: 1px solid #5078dc;
+    box-shadow: 0 0 0.25em 0.03em #3c64c8;
+  }
+  &.bug {
+    background: #32b432;
+    border: 1px solid #46c846;
+    box-shadow: 0 0 0.25em 0.03em #32b432;
+  }
+  &.normal {
+    background: #a0a0a0;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 0 0.25em 0.03em #a0a0a0;
+  }
+  &.dark {
+    background: #646464;
+    border: 1px solid #787878;
+    box-shadow: 0 0 0.25em 0.03em #646464;
+  }
+  &.electric {
+    background: #e4b700;
+    border: 1px solid #ffe100;
+    box-shadow: 0 0 0.25em 0.03em #e4b700;
+  }
+  &.ground {
+    background: #cca142;
+    border: 1px solid #fac85a;
+    box-shadow: 0 0 0.25em 0.03em #cca142;
+  }
+  &.ice {
+    background: #00b7ee;
+    border: 1px solid #14f5ff;
+    box-shadow: 0 0 0.25em 0.03em #00b7ee;
+  }
+  &.steel {
+    background: #96b4dc;
+    border: 1px solid #aac8f0;
+    box-shadow: 0 0 0.25em 0.03em #96b4dc;
+  }
+  &.psychic {
+    background: #dc78c8;
+    border: 1px solid #f08cdc;
+    box-shadow: 0 0 0.25em 0.03em #dc78c8;
+  }
+  &.fairy {
+    background: #ff7eb8;
+    border: 1px solid #ffafdc;
+    box-shadow: 0 0 0.25em 0.03em #ff7eb8;
+  }
+  &.fighting {
+    background: #c85500;
+    border: 1px solid #dc6900;
+    box-shadow: 0 0 0.25em 0.03em #c85500;
+  }
+  &.rock {
+    background: #a07850;
+    border: 1px solid #b48c64;
+    box-shadow: 0 0 0.25em 0.03em #a07850;
+  }
+  &.ghost {
+    background: #8c78f0;
+    border: 1px solid #a08cff;
+    box-shadow: 0 0 0.25em 0.03em #8c78f0;
+  }
 }
 
 a {
