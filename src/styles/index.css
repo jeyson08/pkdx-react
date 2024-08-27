@@ -668,4 +668,8 @@ a {
 .pokemon .pokemon-container .principal .right .infos p {
   font-size: 1.2rem;
   font-weight: 400;
+}
+.pokemon .pokemon-container .principal .right .infos li {
+  font-size: 1.2rem;
+  font-weight: 400;
 }/*# sourceMappingURL=index.css.map */

@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { customId } from "../components/Utils";
+import PreviousPkm from "../components/PreviousPkm";
+import NextPkm from "../components/NextPkm";
 
 const Pokemon = () => {
   const { name } = useParams();
@@ -41,7 +43,11 @@ const Pokemon = () => {
       {pokemonData && (
         <div className="pokemon-container">
           <div className="pokemon-header">
-            <div className="previous">Previous</div>
+            <PreviousPkm
+              pkmId={
+                pokemonData.is_default ? pokemonData.id : pkmSpeciesData.id
+              }
+            />
             <div className="infos">
               <p>
                 {pokemonData.is_default
@@ -50,7 +56,7 @@ const Pokemon = () => {
               </p>
               <h2>{pokemonData.name}</h2>
             </div>
-            <div className="next">Next</div>
+            <NextPkm pkmId={pokemonData.id && pokemonData.id} />
           </div>
           <div className="principal">
             <div className="left">
