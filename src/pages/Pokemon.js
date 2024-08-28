@@ -15,17 +15,15 @@ const Pokemon = () => {
   const [pkmSpeciesData, setPkmSpeciesData] = useState({});
 
   useEffect(() => {
-    if (!pokemonData) {
-      axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        .then((res) => setPokemonData(res.data))
-        .catch((error) =>
-          console.error(
-            "Erreur lors de la récupération des données pokemon:",
-            error
-          )
-        );
-    }
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+      .then((res) => setPokemonData(res.data))
+      .catch((error) =>
+        console.error(
+          "Erreur lors de la récupération des données pokemon:",
+          error
+        )
+      );
   }, [name, pokemonData]);
 
   useEffect(() => {
@@ -43,11 +41,7 @@ const Pokemon = () => {
       {pokemonData && (
         <div className="pokemon-container">
           <div className="pokemon-header">
-            <PreviousPkm
-              pkmId={
-                pokemonData.is_default ? pokemonData.id : pkmSpeciesData.id
-              }
-            />
+            <PreviousPkm pokemonId={pokemonData.id && pokemonData.id} />
             <div className="infos">
               <p>
                 {pokemonData.is_default
@@ -56,7 +50,7 @@ const Pokemon = () => {
               </p>
               <h2>{pokemonData.name}</h2>
             </div>
-            <NextPkm pkmId={pokemonData.id && pokemonData.id} />
+            <NextPkm pokemonId={pokemonData.id && pokemonData.id} />
           </div>
           <div className="principal">
             <div className="left">
@@ -112,9 +106,9 @@ const Pokemon = () => {
                 </div>
                 <div className="category">
                   <h4>Category</h4>
-                  <p>
+                  {/* <p>
                     {pkmSpeciesData.genera && pkmSpeciesData.genera[7].genus}
-                  </p>
+                  </p> */}
                 </div>
                 <div className="gender">
                   <h4>Gender</h4>

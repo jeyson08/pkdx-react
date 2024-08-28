@@ -1,14 +1,33 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-const PreviousPkm = ({ pkmId }) => {
+const PreviousPkm = ({ pokemonId }) => {
+  const [pokemonData, setPokemonData] = useState({});
+
+  let newPokemonId = pokemonId - 1;
+
+  if (pokemonId === 10001) {
+    newPokemonId = 1025;
+  }
+
   useEffect(() => {
-    if (pkmId) {
-      console.log(pkmId);
+    if (newPokemonId > 1) {
+      axios
+        .get(`https://pokeapi.co/api/v2/pokemon/${newPokemonId}/`)
+        .then((res) => setPokemonData(res.data));
     }
-  }, [pkmId]);
+  }, [newPokemonId]);
   return (
-    <div>
-      <h1>previous</h1>
+    <div className="previous">
+      {pokemonData && pokemonData.id > 1 && (
+        <NavLink
+          to={`/pokemon/${pokemonData.name}`}
+          state={{ pokemonData: pokemonData }}
+        >
+          Previous
+        </NavLink>
+      )}
     </div>
   );
 };
