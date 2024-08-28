@@ -24,7 +24,7 @@ const Pokemon = () => {
           error
         )
       );
-  }, [name, pokemonData]);
+  }, [name]);
 
   useEffect(() => {
     if (pokemonData.species && pokemonData.species.url) {

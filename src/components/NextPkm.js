@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { customId } from "./Utils";
 
 const NextPkm = ({ pokemonId }) => {
   const [pokemonData, setPokemonData] = useState({});
@@ -19,13 +20,19 @@ const NextPkm = ({ pokemonId }) => {
     }
   }, [newPokemonId]);
   return (
-    <div>
+    <div className="next">
       {pokemonData && pokemonData.id < 10277 && (
         <NavLink
           to={`/pokemon/${pokemonData.name}`}
           state={{ pokemonData: pokemonData }}
         >
-          Next
+          <div className="arrow-container">
+            <p className="arrow">{">"}</p>
+          </div>
+          <div className="infos-next">
+            <p className="id">{pokemonData.id && customId(pokemonData.id)}</p>
+            <p className="name">{pokemonData.name && pokemonData.name}</p>
+          </div>
         </NavLink>
       )}
     </div>

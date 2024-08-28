@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { customId } from "./Utils";
 
 const PreviousPkm = ({ pokemonId }) => {
   const [pokemonData, setPokemonData] = useState({});
@@ -25,7 +26,14 @@ const PreviousPkm = ({ pokemonId }) => {
           to={`/pokemon/${pokemonData.name}`}
           state={{ pokemonData: pokemonData }}
         >
-          Previous
+          <div className="arrow-container">
+            <p className="arrow">{"<"}</p>
+          </div>
+
+          <div className="infos-previous">
+            <p className="id">{pokemonData.id && customId(pokemonData.id)}</p>
+            <p className="name">{pokemonData.name && pokemonData.name}</p>
+          </div>
         </NavLink>
       )}
     </div>
