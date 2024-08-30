@@ -12,6 +12,7 @@ import {
   Radar,
   PolarAngleAxis,
   PolarRadiusAxis,
+  ResponsiveContainer,
 } from "recharts";
 
 const baseMaxStats = {
@@ -165,24 +166,26 @@ const Pokemon = () => {
             </div>
             <div className="right">
               <h3>Status</h3>
-              <RadarChart
-                outerRadius={90}
-                width={730}
-                height={250}
-                data={statData}
-              >
-                <PolarGrid />
-                <PolarAngleAxis dataKey="stat" />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} />
-                <Radar
-                  name={pokemonData.name && pokemonData.name}
-                  dataKey="result"
-                  stroke="#00d2ff"
-                  fill="#00d2ff"
-                  fillOpacity={0.6}
-                />
-                <Legend />
-              </RadarChart>
+              <ResponsiveContainer width="80%" height="80%">
+                <RadarChart data={statData}>
+                  <PolarGrid stroke="white" />
+                  <PolarAngleAxis dataKey="stat" stroke="white" />
+                  <PolarRadiusAxis
+                    angle={30}
+                    domain={[0, 100]}
+                    axisLine={false}
+                    tick={false}
+                  />
+                  <Radar
+                    name={pokemonData.name && pokemonData.name}
+                    dataKey="result"
+                    stroke="#00d2ff"
+                    fill="#00d2ff"
+                    fillOpacity={0.6}
+                  />
+                  <Legend content={() => null} />
+                </RadarChart>
+              </ResponsiveContainer>
             </div>
           </div>
           <div className="style"></div>
