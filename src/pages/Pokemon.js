@@ -5,6 +5,23 @@ import axios from "axios";
 import { customId } from "../components/Utils";
 import PreviousPkm from "../components/PreviousPkm";
 import NextPkm from "../components/NextPkm";
+import {
+  RadarChart,
+  PolarGrid,
+  Legend,
+  Radar,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+} from "recharts";
+
+const baseMaxStats = {
+  hp: 255,
+  attack: 190,
+  defense: 230,
+  "special-attack": 194,
+  "special-defense": 230,
+  speed: 180,
+};
 
 const Pokemon = () => {
   const { name } = useParams();
@@ -13,11 +30,15 @@ const Pokemon = () => {
     location.state?.pokemonData || null
   );
   const [pkmSpeciesData, setPkmSpeciesData] = useState({});
+  const [description, setDescription] = useState("");
+  const [statData, setStatData] = useState([]);
 
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      .then((res) => setPokemonData(res.data))
+      .then((res) => {
+        setPokemonData(res.data);
+      })
       .catch((error) =>
         console.error(
           "Erreur lors de la récupération des données pokemon:",
@@ -27,10 +48,31 @@ const Pokemon = () => {
   }, [name]);
 
   useEffect(() => {
+    setStatData(
+      pokemonData.stats &&
+        pokemonData.stats.map((stat) => {
+          const maxBaseStat = baseMaxStats[stat.stat.name] || 255;
+          return {
+            stat: stat.stat.name,
+            result: (stat.base_stat / maxBaseStat) * 100,
+            fullMark: maxBaseStat,
+          };
+        })
+    );
+  }, [pokemonData.stats]);
+
+  useEffect(() => {
     if (pokemonData.species && pokemonData.species.url) {
-      axios
-        .get(pokemonData.species.url)
-        .then((res) => setPkmSpeciesData(res.data));
+      axios.get(pokemonData.species.url).then((res) => {
+        setPkmSpeciesData(res.data);
+        const flavorTextEntry = res.data.flavor_text_entries.find(
+          (entry) => entry.language.name === "en"
+        );
+
+        if (flavorTextEntry) {
+          setDescription(flavorTextEntry.flavor_text);
+        }
+      });
     }
   }, [pokemonData]);
 
@@ -117,8 +159,31 @@ const Pokemon = () => {
             </div>
           </div>
           <div className="infos">
-            <div className="left"></div>
-            <div className="right"></div>
+            <div className="left">
+              <h3>Description</h3>
+              <p className="resume">{description}</p>
+            </div>
+            <div className="right">
+              <h3>Status</h3>
+              <RadarChart
+                outerRadius={90}
+                width={730}
+                height={250}
+                data={statData}
+              >
+                <PolarGrid />
+                <PolarAngleAxis dataKey="stat" />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} />
+                <Radar
+                  name={pokemonData.name && pokemonData.name}
+                  dataKey="result"
+                  stroke="#00d2ff"
+                  fill="#00d2ff"
+                  fillOpacity={0.6}
+                />
+                <Legend />
+              </RadarChart>
+            </div>
           </div>
           <div className="style"></div>
           <div className="evolution"></div>

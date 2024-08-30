@@ -20,7 +20,7 @@ const PreviousPkm = ({ pokemonId }) => {
     }
   }, [newPokemonId]);
   return (
-    <div className="previous">
+    <div className="previous" title={pokemonData.name && pokemonData.name}>
       {pokemonData && pokemonData.id > 1 && (
         <NavLink
           to={`/pokemon/${pokemonData.name}`}

@@ -678,8 +678,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 .pokemon-header .previous a .arrow-container {
+  position: absolute;
+  left: 5%;
   font-size: 2rem;
   border-radius: 50%;
   border: 2px solid #00d2ff;
@@ -711,6 +714,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  width: 50%;
+  right: 10%;
 }
 .pokemon-header .previous a .infos-previous p.id {
   color: #00d2ff;
@@ -719,6 +725,11 @@ a {
 .pokemon-header .previous a .infos-previous p.name {
   font-size: 1.4rem;
   text-transform: capitalize;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .pokemon-header .infos {
   display: -webkit-box;
@@ -783,8 +794,11 @@ a {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  position: relative;
 }
 .pokemon-header .next a .arrow-container {
+  position: absolute;
+  right: 5%;
   font-size: 2rem;
   border-radius: 50%;
   border: 2px solid #00d2ff;
@@ -816,6 +830,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  left: 10%;
+  width: 50%;
 }
 .pokemon-header .next a .infos-next p.id {
   color: #00d2ff;
@@ -824,4 +841,8 @@ a {
 .pokemon-header .next a .infos-next p.name {
   font-size: 1.4rem;
   text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */
