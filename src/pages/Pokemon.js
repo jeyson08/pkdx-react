@@ -5,6 +5,7 @@ import axios from "axios";
 import { customId } from "../components/Utils";
 import PreviousPkm from "../components/PreviousPkm";
 import NextPkm from "../components/NextPkm";
+import Style from "../components/Style";
 import {
   RadarChart,
   PolarGrid,
@@ -187,7 +188,7 @@ const Pokemon = () => {
               </ResponsiveContainer>
             </div>
           </div>
-          <div className="style"></div>
+          <Style pkmSpeciesData={pkmSpeciesData} />
           <div className="evolution"></div>
         </div>
       )}
