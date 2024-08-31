@@ -159,13 +159,12 @@ const Pokemon = () => {
               </div>
             </div>
           </div>
-          <div className="infos">
+          <div className="carac">
             <div className="left">
               <h3>Description</h3>
               <p className="resume">{description}</p>
             </div>
             <div className="right">
-              <h3>Status</h3>
               <ResponsiveContainer width="80%" height="80%">
                 <RadarChart data={statData}>
                   <PolarGrid stroke="white" />

@@ -487,6 +487,7 @@ a {
   padding-top: 30px;
   width: 100%;
   z-index: 2;
+  overflow: hidden;
 }
 .pokemon .pokemon-container .principal {
   display: -webkit-box;
@@ -634,6 +635,46 @@ a {
 .pokemon .pokemon-container .principal .right .infos li {
   font-size: 1.2rem;
   font-weight: 400;
+}
+.pokemon .pokemon-container .carac {
+  width: 110%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -200px;
+}
+.pokemon .pokemon-container .carac .left {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pokemon .pokemon-container .carac .left h3 {
+  font-size: 2rem;
+  color: #00d2ff;
+  font-weight: 400;
+  font-style: italic;
+}
+.pokemon .pokemon-container .carac .left p.resume {
+  font-size: 1.4rem;
+  width: 50%;
+  font-style: italic;
+}
+.pokemon .pokemon-container .carac .right {
+  width: 50%;
+  height: 100%;
 }
 
 .pokemon-header {
