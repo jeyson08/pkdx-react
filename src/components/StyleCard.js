@@ -11,18 +11,24 @@ const StyleCard = ({ url, id }) => {
 
   return (
     <div className="style-card">
-      {pkmData.sprites.other["official-artwork"].front_default && (
-        <img
-          src={pkmData.sprites.other["official-artwork"].front_default}
-          alt={pkmData.name}
-        />
-      )}
-      {id && <p className="id">{customId(id)}</p>}
-      {pkmData.name && <p className="name">{pkmData.name}</p>}
+      <div className="img-container">
+        {pkmData.sprites && (
+          <img
+            src={pkmData.sprites.other["official-artwork"].front_default}
+            alt={pkmData.name}
+          />
+        )}
+      </div>
+      <div className="style-info">
+        {id && <p className="id">{customId(id)}</p>}
+        {pkmData.name && <p className="name">{pkmData.name}</p>}
+      </div>
       <ul className="types">
         {pkmData.types &&
           pkmData.types.map((type) => (
-            <li className={type.type.name}>{type.type.name}</li>
+            <li className={type.type.name} key={type.type.name}>
+              {type.type.name}
+            </li>
           ))}
       </ul>
     </div>

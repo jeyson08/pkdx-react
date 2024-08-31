@@ -1,0 +1,29 @@
+.style-container {
+  .stylecard-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .style-card {
+      height: 300px;
+      width: 15%;
+      border: 1px solid white;
+      border-radius: 100px 100px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .img-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 80%;
+        }
+      }
+      ul.types {
+        display: flex;
+      }
+    }
+  }
+}
