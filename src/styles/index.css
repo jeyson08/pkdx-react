@@ -888,21 +888,42 @@ a {
   width: 100%;
 }
 
+.style-container {
+  margin-left: 5%;
+  position: relative;
+}
+.style-container h3 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  position: absolute;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  left: -10%;
+  bottom: 110px;
+  opacity: 0.5;
+  letter-spacing: 1rem;
+}
 .style-container .stylecard-container {
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 5%;
 }
 .style-container .stylecard-container .style-card {
-  height: 300px;
-  width: 15%;
-  border: 1px solid white;
+  height: 365px;
+  width: 22%;
+  border: 2px solid #4b76a7;
+  background: #152028;
   border-radius: 100px 100px 20px 20px;
+}
+.style-container .stylecard-container .style-card a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -915,8 +936,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
+  width: 100%;
 }
-.style-container .stylecard-container .style-card .img-container {
+.style-container .stylecard-container .style-card a .img-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -928,11 +951,38 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.style-container .stylecard-container .style-card .img-container img {
-  width: 80%;
+.style-container .stylecard-container .style-card a .img-container img {
+  width: 100%;
+  -webkit-filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black);
+          filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black);
 }
-.style-container .stylecard-container .style-card ul.types {
+.style-container .stylecard-container .style-card a .style-info {
+  margin-top: -50px;
+}
+.style-container .stylecard-container .style-card a .style-info p {
+  text-align: center;
+}
+.style-container .stylecard-container .style-card a .style-info p.id {
+  color: #b4ebff;
+  font-size: 1.2rem;
+}
+.style-container .stylecard-container .style-card a .style-info p.name {
+  font-size: 1.2rem;
+}
+.style-container .stylecard-container .style-card a ul.types {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+.style-container .stylecard-container .style-card a ul.types li {
+  border-radius: 30px;
+  padding: 2% 5% 2% 5%;
+  text-align: center;
+  width: 40%;
 }/*# sourceMappingURL=index.css.map */
