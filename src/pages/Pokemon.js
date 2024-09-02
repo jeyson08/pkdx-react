@@ -15,6 +15,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import Evolution from "../components/Evolution";
 
 const baseMaxStats = {
   hp: 255,
@@ -189,7 +190,7 @@ const Pokemon = () => {
             </div>
           </div>
           <Style pkmSpeciesData={pkmSpeciesData} />
-          <div className="evolution"></div>
+          <Evolution pkmSpeciesData={pkmSpeciesData} />
         </div>
       )}
       <button>Back to Pokédex</button>

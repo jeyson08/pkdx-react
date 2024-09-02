@@ -911,9 +911,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  gap: 2%;
   margin-left: 5%;
 }
 .style-container .stylecard-container .style-card {
