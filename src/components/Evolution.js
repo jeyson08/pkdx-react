@@ -13,30 +13,38 @@ const Evolution = ({ pkmSpeciesData }) => {
   }, [pkmSpeciesData]);
 
   return (
-    <div className="evolution">
-      <h3>Evolution</h3>
-      {evolutionChain.species && (
-        <EvolutionCard
-          key={evolutionChain.species.url}
-          url={evolutionChain.species.url}
-        />
-      )}
-      {evolutionChain.evolves_to &&
-        evolutionChain.evolves_to.map((evolution) => (
-          <EvolutionCard
-            key={evolution.species.url}
-            url={evolution.species.url}
-          />
-        ))}
-      {evolutionChain.evolves_to &&
-        evolutionChain.evolves_to.map((evolution) =>
-          evolution.evolves_to.map((evolution) => (
+    <div className="evolution-container">
+      <h3>évolution</h3>
+      <div className="evolution">
+        <div className="primaire">
+          {evolutionChain.species && (
             <EvolutionCard
-              key={evolution.species.url}
-              url={evolution.species.url}
+              key={evolutionChain.species.url}
+              url={evolutionChain.species.url}
             />
-          ))
-        )}
+          )}
+        </div>
+        <div className="secondaire">
+          {evolutionChain.evolves_to &&
+            evolutionChain.evolves_to.map((evolution) => (
+              <EvolutionCard
+                key={evolution.species.url}
+                url={evolution.species.url}
+              />
+            ))}
+        </div>
+        <div className="final">
+          {evolutionChain.evolves_to &&
+            evolutionChain.evolves_to.map((evolution) =>
+              evolution.evolves_to.map((evolution) => (
+                <EvolutionCard
+                  key={evolution.species.url}
+                  url={evolution.species.url}
+                />
+              ))
+            )}
+        </div>
+      </div>
     </div>
   );
 };

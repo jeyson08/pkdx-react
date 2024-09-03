@@ -193,7 +193,6 @@ const Pokemon = () => {
           <Evolution pkmSpeciesData={pkmSpeciesData} />
         </div>
       )}
-      <button>Back to Pokédex</button>
     </div>
   );
 };

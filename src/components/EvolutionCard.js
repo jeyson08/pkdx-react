@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const EvolutionCard = ({ url }) => {
   const [pkmSpeciesData, setPkmSpeciesData] = useState([]);
@@ -18,14 +19,16 @@ const EvolutionCard = ({ url }) => {
 
   return (
     <div className="evolution-card">
-      <div className="img-container">
-        {pkmData.sprites && (
-          <img
-            src={pkmData.sprites.other["official-artwork"].front_default}
-            alt={pkmData.name}
-          />
-        )}
-      </div>
+      <NavLink to={`/pokemon/${pkmData.name}`} state={{ pokemonData: pkmData }}>
+        <div className="img-container">
+          {pkmData.sprites && (
+            <img
+              src={pkmData.sprites.other["official-artwork"].front_default}
+              alt={pkmData.name}
+            />
+          )}
+        </div>
+      </NavLink>
     </div>
   );
 };
