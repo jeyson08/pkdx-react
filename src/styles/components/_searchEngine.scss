@@ -3,10 +3,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 450px;
+  height: 100px;
   margin-top: 60px;
+  margin-bottom: 60px;
 
   .search-options {
+    background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #4e7cb0;
     border-radius: 30px;
     box-shadow: 0px 0px 10px #b3eafe;
@@ -14,7 +16,7 @@
     justify-content: space-around;
     align-items: center;
     width: 80%;
-    height: 30%;
+    // height: 30%;
 
     .search {
       display: flex;

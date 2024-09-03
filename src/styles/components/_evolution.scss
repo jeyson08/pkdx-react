@@ -13,11 +13,11 @@
     align-items: center;
   }
   .evolution {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex;
+    width: auto;
+    justify-content: flex-start;
     align-items: center;
-    position: relative;
+    gap: 2%;
     .primaire,
     .secondaire,
     .final {
@@ -27,28 +27,6 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-    }
-    .primaire {
-      &::after {
-        content: "";
-        background: url("../assets/img/arrow_down.png");
-        height: 64px;
-        width: 64px;
-        position: absolute;
-        left: 28%;
-        transform: rotate(-90deg);
-      }
-    }
-    .final {
-      &::before {
-        content: "";
-        background: url("../assets/img/arrow_down.png");
-        height: 64px;
-        width: 64px;
-        position: absolute;
-        right: 28%;
-        transform: rotate(-90deg);
-      }
     }
     .evolution-card {
       border: 2px solid #4b76a7;

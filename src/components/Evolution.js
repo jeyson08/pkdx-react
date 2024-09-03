@@ -12,6 +12,12 @@ const Evolution = ({ pkmSpeciesData }) => {
         .then((res) => setEvolutionChain(res.data.chain));
   }, [pkmSpeciesData]);
 
+  const hasFinalEvolution =
+    evolutionChain.evolves_to &&
+    evolutionChain.evolves_to.some(
+      (evolution) => evolution.evolves_to && evolution.evolves_to.length > 0
+    );
+
   return (
     <div className="evolution-container">
       <h3>évolution</h3>
@@ -24,26 +30,30 @@ const Evolution = ({ pkmSpeciesData }) => {
             />
           )}
         </div>
-        <div className="secondaire">
-          {evolutionChain.evolves_to &&
-            evolutionChain.evolves_to.map((evolution) => (
-              <EvolutionCard
-                key={evolution.species.url}
-                url={evolution.species.url}
-              />
-            ))}
-        </div>
-        <div className="final">
-          {evolutionChain.evolves_to &&
-            evolutionChain.evolves_to.map((evolution) =>
-              evolution.evolves_to.map((evolution) => (
+        {evolutionChain.evolves_to && evolutionChain.evolves_to.length > 0 && (
+          <div className="secondaire">
+            {evolutionChain.evolves_to &&
+              evolutionChain.evolves_to.map((evolution) => (
                 <EvolutionCard
                   key={evolution.species.url}
                   url={evolution.species.url}
                 />
-              ))
-            )}
-        </div>
+              ))}
+          </div>
+        )}
+        {hasFinalEvolution && (
+          <div className="final">
+            {evolutionChain.evolves_to &&
+              evolutionChain.evolves_to.map((evolution) =>
+                evolution.evolves_to.map((evolution) => (
+                  <EvolutionCard
+                    key={evolution.species.url}
+                    url={evolution.species.url}
+                  />
+                ))
+              )}
+          </div>
+        )}
       </div>
     </div>
   );
